@@ -1,0 +1,2 @@
+# littledesign.ninja
+MEAN Stack.

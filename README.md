@@ -1,4 +1,3 @@
 # littledesign.ninja
-MEAN Stack.
 
-Source code coming soon!
+Design tutorial website

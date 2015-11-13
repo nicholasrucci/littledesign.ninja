@@ -1,0 +1,29 @@
+{
+  "name": "littledesign.ninja",
+  "version": "1.0.0",
+  "description": "littledesign.ninja",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholasrucci/littledesign.ninja.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicholasrucci/littledesign.ninja/issues"
+  },
+  "homepage": "https://github.com/nicholasrucci/littledesign.ninja#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-env": "^0.2.0",
+    "gulp-jshint": "^1.12.0",
+    "gulp-nodemon": "^2.0.4"
+  }
+}

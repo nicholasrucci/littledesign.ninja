@@ -5,7 +5,7 @@
 	var path							= require('path');
 	var jade							= require('jade');
 	var mongoose					= require('mongoose');
-	var app 							= express();
+	var app								= express();
 
 	/* Jade Setup */
 	app.set('views', path.join(__dirname, 'app/views'));

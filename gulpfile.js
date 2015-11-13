@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (function(){
 	'use strict';
 
@@ -7,7 +6,7 @@
 	var nodemon 				= require('gulp-nodemon');
 	var jshint 					= require('gulp-jshint');
 	var env 						= require('gulp-env');
-	var jade          = require('gulp-jade');
+	var jade          	= require('gulp-jade');
 	var plugins 				= gulpLoadPlugins();
 
 gulp.task('jade', function() {

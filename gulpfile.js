@@ -6,13 +6,15 @@
 	var nodemon 				= require('gulp-nodemon');
 	var jshint 					= require('gulp-jshint');
 	var env 						= require('gulp-env');
-	var jade          = require('gulp-jade');
+	var jade          	= require('gulp-jade');
 	var plugins 				= gulpLoadPlugins();
 
 	var PATH = {
-		JS: ['./app/**/*.js', './public/**/*.js', './*.js']
+		JS: ['./app/**/*.js', './public/**/*.js', './*.js'],
+		HTML: './public/html'
 	};
 
+<<<<<<< HEAD
   env({
     vars: {
       PORT: 3000
@@ -24,6 +26,19 @@
       .pipe(jade())
       .pipe(gulp.dest('public/'));
   });
+=======
+	env({
+		vars: {
+			PORT: 3000
+		}
+	});
+>>>>>>> f2dd17ae34f49dcb50dea8580890b43a6b83f29e
+
+	gulp.task('jade', function() {
+		return gulp.src('app/views/*.jade')
+			.pipe(jade())
+			.pipe(gulp.dest(PATH.HTML));
+	});
 
 	gulp.task('lint', function () {
 		gulp.src(PATH.JS)

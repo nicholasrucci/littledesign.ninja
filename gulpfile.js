@@ -10,7 +10,7 @@
 	var plugins 				= gulpLoadPlugins();
 
 gulp.task('jade', function() {
-  gulp.src('app/views/*.jade')
+  return gulp.src('app/views/*.jade')
     .pipe(jade())
     .pipe(gulp.dest('public/'));
 });
@@ -35,9 +35,9 @@ gulp.task('jade', function() {
 	gulp.task('develop', function () {
 		nodemon({
 			script: 'server.js',
-			ext: 'html js',
+			ext: 'jade js',
 			ignore: [],
-			tasks: ['lint']
+			tasks: ['lint', 'jade']
 		})
 			.on('restart', function () {
 				console.log('Server restarted!');

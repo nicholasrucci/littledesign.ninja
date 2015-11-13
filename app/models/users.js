@@ -6,7 +6,8 @@
 	var Schema = mongoose.Schema;
 
 	var User = new mongoose.Schema({
-		username: String
+		username: String,
+		admin: {type: Boolean, default: false}
 	});
 
 	User.plugin(passportLocalMongoose);

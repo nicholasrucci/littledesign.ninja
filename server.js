@@ -29,6 +29,7 @@
 	require('./app/config/passport')(passport);
 	require('./app/routes/views/users')(app);
 	require('./app/routes/views/login')(app);
+	require('./app/routes/views/admin')(app);
 
 	app.get('/', function (req, res) {
 		res.render('index', { user: req.user });

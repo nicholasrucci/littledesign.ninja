@@ -8,6 +8,9 @@
 	var mongoose					= require('mongoose');
 	var passport					= require('passport');
 	var skipper						= require('skipper');
+	var session						= require('express-session');
+	var cookieParser			= require('cookie-parser');
+	var config            = require('./app/config/config.js');
 	var app								= express();
 
 	/* Jade Setup */
@@ -17,15 +20,18 @@
 	mongoose.connect('mongodb://localhost/ninja');
 
 	app.use(skipper());
+	app.use(cookieParser());
+	app.use(session(config.session));
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.use(flash());
 
 	require('./app/config/passport')(passport);
 	require('./app/routes/views/users')(app);
+	require('./app/routes/views/login')(app);
 
 	app.get('/', function (req, res) {
-		res.render('index');
+		res.render('index', { user: req.user });
 	});
 
 	app.listen(process.env.PORT, function () {

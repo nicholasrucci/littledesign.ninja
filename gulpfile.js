@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (function(){
 	'use strict';
 
@@ -6,7 +7,14 @@
 	var nodemon 				= require('gulp-nodemon');
 	var jshint 					= require('gulp-jshint');
 	var env 						= require('gulp-env');
+	var jade          = require('gulp-jade');
 	var plugins 				= gulpLoadPlugins();
+
+gulp.task('jade', function() {
+  gulp.src('app/views/*.jade')
+    .pipe(jade())
+    .pipe(gulp.dest('public/'));
+});
 
 	var PATH = {
 		JS: ['./app/**/*.js', './public/**/*.js', './*.js']
@@ -36,4 +44,6 @@
 				console.log('Server restarted!');
 			});
 	});
+
+gulp.task('default', ['develop'], function() {});
 })();

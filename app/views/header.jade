@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    block title
+      title Little Design Ninja
+    block css
+      link(rel="stylesheet" type="text/css" href="/css/style.css")
+  body
+    header
+      div.wrapper
+        img.logo(src="/images/logo.png" alt="little design ninja logo")
+        nav
+          ul
+            li 
+              a(href="./tutorials.html") Tutorials
+            li
+              a(href="#") Articles
+        form
+
+          input(type='text' placeholder='search...' name='search')
+        a(href='#' name='login') Login
+    block content

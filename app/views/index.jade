@@ -1,16 +1,52 @@
-doctype html
-html
-  head
-    meta(charset="utf-8")
-    title Little Design Ninja
-    link(rel="stylesheet" type="text/css" href="css/style.css")
-  body
-    header
-    h1 Testing Jade
-  nav
-    ul
-      li test
-      li again
-      li maybe
+extends ./header.jade
 
+block title
+  title Little Design Ninja | Home
+block content
+  div.spacer
+  section.ninjas
+    div.wrapper
+      figure
+        img(src='/images/ninja-ai.png')
+        figcaption Illustrator
+      figure
+        img(src='/images/ninja-id.png')
+        figcaption Indesign
+      figure
+        img(src='/images/ninja-ps.png')
+        figcaption Photoshop
+      figure
+        img(src='/images/ninja-wb.png')
+        figcaption HTML/CSS
+  div.spacer
+  section.videos
+    div.wrapper
+      h2 Recently Added
+      div.video
+        img(src='' alt='thumbnail')
+        div
+          p title
+          p author | timestamp
+          p description
+      div.video
+        img(src='' alt='thumbnail')
+        div
+          p title
+          p author | timestamp
+          p description
+      div.video
+        img(src='' alt='thumbnail')
+        div
+          p title
+          p author | timestamp
+          p description
+      div.video
+        img(src='' alt='thumbnail')
+        div
+          p title
+          p author | timestamp
+          p description
+      div.clear
+  div.spacer
+  include ./foot.jade
 

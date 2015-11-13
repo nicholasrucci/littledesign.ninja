@@ -20,7 +20,6 @@
     },
 
     create: function(req, res) {
-      console.log(req.file('video'));
       req.file('video').upload({
         dirname: __dirname + '/../uploads',
         maxBytes: 150000000
@@ -45,7 +44,7 @@
               if (err) {
                 console.log(err);
               }
-              res.redirect(200, '/');
+              res.redirect('/');
             });
 
           } else {

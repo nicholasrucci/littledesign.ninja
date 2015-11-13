@@ -32,7 +32,7 @@
 			.pipe(jshint.reporter('jshint-stylish'));
 	});
 
-	gulp.task('develop', function () { 
+	gulp.task('develop', function () {
 		nodemon({
 			script: 'server.js',
 			ext: 'jade js',

@@ -31,6 +31,7 @@
     "gulp-nodemon": "^2.0.4",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.0.1",
+    "mongoose": "^4.2.5",
     "passport": "^0.3.2",
     "skipper": "^0.5.8"
   }

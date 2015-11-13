@@ -22,10 +22,10 @@
 	app.use(flash());
 
 	require('./app/config/passport')(passport);
-	require('./app/routes/views/users')(app);
+	require('./app/routes/index')(app);
 
 	app.get('/', function (req, res) {
-		res.render('index');
+		res.render('signIn');
 	});
 
 	app.listen(process.env.PORT, function () {

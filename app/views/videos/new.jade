@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  form(action="/videos/create" method="post" enctype='multipart/form-data')
+    div
+      label Title:
+      input(type="text" name="title")
+    div
+      label Author:
+      input(type="text" name="author")
+    div
+      label Description:
+      input(type="text" name="description")
+    div
+      label Duration:
+      input(type="text" name="duration")
+    div
+      label Duration:
+      input(type="file" name="video")
+    div
+      input(type="submit" value="Save video")

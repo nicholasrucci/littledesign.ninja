@@ -14,7 +14,6 @@
 		HTML: './public/html'
 	};
 
-<<<<<<< HEAD
   env({
     vars: {
       PORT: 3000
@@ -26,19 +25,6 @@
       .pipe(jade())
       .pipe(gulp.dest('public/'));
   });
-=======
-	env({
-		vars: {
-			PORT: 3000
-		}
-	});
->>>>>>> f2dd17ae34f49dcb50dea8580890b43a6b83f29e
-
-	gulp.task('jade', function() {
-		return gulp.src('app/views/*.jade')
-			.pipe(jade())
-			.pipe(gulp.dest(PATH.HTML));
-	});
 
 	gulp.task('lint', function () {
 		gulp.src(PATH.JS)

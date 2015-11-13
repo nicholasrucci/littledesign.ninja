@@ -9,22 +9,21 @@
 	var jade          = require('gulp-jade');
 	var plugins 				= gulpLoadPlugins();
 
-gulp.task('jade', function() {
-  return gulp.src('app/views/*.jade')
-    .pipe(jade())
-    .pipe(gulp.dest('public/'));
-});
-
 	var PATH = {
 		JS: ['./app/**/*.js', './public/**/*.js', './*.js']
 	};
 
+  env({
+    vars: {
+      PORT: 3000
+    }
+  });
 
-	env({
-		vars: {
-			PORT: 3000
-		}
-	});
+  gulp.task('jade', function() {
+    return gulp.src('app/views/*.jade')
+      .pipe(jade())
+      .pipe(gulp.dest('public/'));
+  });
 
 	gulp.task('lint', function () {
 		gulp.src(PATH.JS)

@@ -3,9 +3,8 @@
 
 	var express 					= require('express');
 	var path							= require('path');
-	var app 							= express();
 	var jade							= require('jade');
-	var path							= require('path');
+	var app 							= express();
 
 	/* Jade Setup */
 	app.set('views', path.join(__dirname, 'app/views'));

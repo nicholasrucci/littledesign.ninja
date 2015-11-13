@@ -5,6 +5,6 @@
 
 	module.exports = function(app) {
 		app.get('/users/new', UsersController.new);
-		app.post('/users/create', UsersController.create);
+		app.post('/users', UsersController.create);
 	};
 })();

@@ -5,7 +5,6 @@ block title
 block content
 	div.spacer
 	section.main
-		
 		- var n = ['','','','','','','','','']
 		div.wrapper
 			div.paginate
@@ -15,11 +14,15 @@ block content
 					img(src='/images/arrow-next.png' alt='next page')
 			each val, index in n
 				figure
-					img(src=val alt='video')
+					img(src='/images/thumb.png' alt='video')
 					figcaption
-						p.title title
+						p.title
+							a(href="/tutorial.html") title
 						p.time 3:45
-						img.fav(src='/images/star-normal.png' alt='favorite icon')
+						//- if favorite
+						//- 	img.fav(src='/images/star-favorite.png' alt='favorite')
+						//- else
+						img.fav(src='/images/star-normal.png' alt='not favorite')
 			div.paginate
 				a(href="previous")
 					img(src='/images/arrow-previous.png' alt='previous page')

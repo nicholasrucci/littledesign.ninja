@@ -22,7 +22,7 @@ footer
 			a(href='#' onclick='overlay(); signup()') Sign Up
 		div.half
 			h1 Login
-			form
+			form(action="/profile.html")
 				input(type='text' name='userlogin' placeholder='Username')
 				input(type='password' name='userpass' placeholder='Password')
 				input(type='submit' name='login' value='Login')
@@ -53,6 +53,8 @@ footer
 			input(type='radio' name='tutorial' value='Photoshop') 
 			label HTML/CSS
 			input(type='radio' name='tutorial' value='HTML/CSS') 
-			label Request
+			label
+			br
 			textarea(placeholder="describe what you want to learn")
+			input(type='submit' name='submit' value="Send")
 		div.clear

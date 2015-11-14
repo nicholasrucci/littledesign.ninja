@@ -2,6 +2,9 @@
   'use strict';
 
   var mongoose = require('mongoose');
+	var paginate = require('paginate')({
+		mongoose: mongoose
+	});
 
   var schema = new mongoose.Schema({
     title: String,

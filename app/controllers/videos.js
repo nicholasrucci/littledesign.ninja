@@ -10,7 +10,9 @@
         if (err) {
           console.log(err);
         } else {
-          res.render('videos/index', { videos: allVideos });
+          res.render('videos/index', {
+						videos: allVideos,
+					});
         }
       });
     },
@@ -30,7 +32,7 @@
           if(uploadedFiles.length) {
             var file = uploadedFiles[0];
             console.log(file);
-            var videoUrl = file.fd.match(/[a-z0-9-]+\..+$/)[0];
+            var videoUrl = file.fd.match(/uploads\/[a-z0-9-]+\..+/);
 
             var video = new Video({
               title: req.body.title,

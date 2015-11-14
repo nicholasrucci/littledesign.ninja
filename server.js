@@ -11,6 +11,7 @@
 	var session						= require('express-session');
 	var cookieParser			= require('cookie-parser');
 	var config            = require('./app/config/config.js');
+	var methodOverride   	= require('method-override');
 	var app								= express();
 
 	/* Jade Setup */
@@ -25,11 +26,13 @@
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.use(flash());
+	app.use(methodOverride('_method'));
 
 	require('./app/config/passport')(passport);
 	require('./app/routes/views/users')(app);
 	require('./app/routes/views/login')(app);
 	require('./app/routes/views/admin')(app);
+	require('./app/routes/views/videos')(app);
 
 	app.get('/', function (req, res) {
 		res.render('index', { user: req.user });

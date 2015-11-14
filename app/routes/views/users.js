@@ -7,6 +7,7 @@
 		if (req.user) {
 			res.redirect('/');
 		}
+		next();
 	};
 
 	module.exports = function(app) {

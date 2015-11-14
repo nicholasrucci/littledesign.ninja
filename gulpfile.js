@@ -14,17 +14,17 @@
 		HTML: './public/html'
 	};
 
-	env({
-		vars: {
-			PORT: 3000
-		}
-	});
+  env({
+    vars: {
+      PORT: 3000
+    }
+  });
 
-	gulp.task('jade', function() {
-		return gulp.src('app/views/*.jade')
-			.pipe(jade())
-			.pipe(gulp.dest(PATH.HTML));
-	});
+  gulp.task('jade', function() {
+    return gulp.src('app/views/*.jade')
+      .pipe(jade())
+      .pipe(gulp.dest('public/'));
+  });
 
 	gulp.task('lint', function () {
 		gulp.src(PATH.JS)

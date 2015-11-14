@@ -10,7 +10,7 @@
         if (err) {
           console.log(err);
         } else {
-          res.json(allVideos);
+          res.render('videos/index', { videos: allVideos });
         }
       });
     },
@@ -21,7 +21,7 @@
 
     create: function(req, res) {
       req.file('video').upload({
-        dirname: __dirname + '/../uploads',
+        dirname: __dirname + '../../../public/uploads',
         maxBytes: 150000000
       }, function(err, uploadedFiles){
           if(err) {
@@ -55,23 +55,33 @@
     },
 
     update: function(req, res) {
-
+			Video.findOneAndUpdate({ _id: req.params.id }, {
+				title: req.body.title,
+				description: req.body.description,
+				author: req.body.author,
+				duration: req.body.duration
+			}, function(err, video) {
+				res.redirect('/videos/' + req.params.id);
+			});
     },
 
     edit: function(req, res) {
       Video.findOne({_id: req.params.id}, function(err, video) {
-        res.render('videos/edit', {video: video});
+        res.render('videos/edit', { video: video });
       });
     },
 
     show: function(req, res) {
       Video.findOne({_id: req.params.id}, function(err, video) {
-        res.json(video);
+        res.render('videos/show', { video: video });
       });
     },
 
     delete: function(req, res) {
-
+			Video.remove({ _id: req.params.id }, function(err) {
+				if (err) console.log("Something went wrong");
+				else { res.redirect('/'); }
+			});
     }
   };
 

@@ -8,6 +8,7 @@
     app.get('/videos/new', VideoController.new);
     app.post('/videos/create', VideoController.create);
     app.get('/videos/(:id)/edit', VideoController.edit);
+    app.get('/videos/(:id)/', VideoController.show);
     app.put('/videos/(:id)', VideoController.update);
     app.delete('/videos/(:id)', VideoController.delete);
   };

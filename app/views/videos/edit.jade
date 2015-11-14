@@ -1,0 +1,19 @@
+block content
+  form(action="/videos/#{video.id}?_method=put", method="post" enctype='multipart/form-data')
+    div
+      label Title:
+      input(type="text", name="title", value="#{video.title}")
+    div
+      label Author:
+      input(type="text", name="author", value="#{video.author}")
+    div
+      label Description:
+      input(type="text", name="description", value="#{video.description}")
+    div
+      label Duration:
+      input(type="text", name="duration", value="#{video.duration}")
+    div
+      input(type="submit", value="Save video")
+  form(action="/videos/#{video.id}?_method=delete", method="post")
+    div
+      input(type="submit", value="Delete Video")

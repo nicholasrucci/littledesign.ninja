@@ -2,6 +2,7 @@ doctype html
 html
   head
     meta(charset="utf-8")
+    script(src='/js/modal.js')
     block title
       title Little Design Ninja
     block css
@@ -9,15 +10,21 @@ html
   body
     header
       div.wrapper
-        img.logo(src="/images/logo.png" alt="little design ninja logo")
+        a(href="index.html")
+          img.logo(src="/images/logo.png" alt="little design ninja logo")
         nav
           ul
             li 
-              a(href="./tutorials.html") Tutorials
+              a(href="./tutorials.html" onclick="dropdown") Tutorials
+              ul(id='dropdown')
+                li Illustrator
+                li Indesign
+                li Photoshop
+                li HTML/CSS
             li
               a(href="#") Articles
         form
 
           input(type='text' placeholder='search...' name='search')
-        a(href='#' name='login') Login
+        a(href='#' name='login' onclick='overlay()') Login / Sign-up
     block content

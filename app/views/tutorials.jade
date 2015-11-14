@@ -3,64 +3,30 @@ extends ./header.jade
 block title
 	title Little Design Ninja | Tutorials
 block content
+	div.spacer
 	section.main
+		
+		- var n = ['','','','','','','','','']
 		div.wrapper
-			figure
-				img(src='' alt='video')
-				figcaption description
-				p title
-				p length
-				img(src='' alt='favorite icon')
-			figure
-				img(src='' alt='video')
-				figcaption description
-				p title
-				p length
-				img(src='' alt='favorite icon')
-			figure
-				img(src='' alt='video')
-				figcaption description
-				p title
-				p length
-				img(src='' alt='favorite icon')
-			figure
-				img(src='' alt='video')
-				figcaption description
-				p title
-				p length
-				img(src='' alt='favorite icon')
-			figure
-				img(src='' alt='video')
-				figcaption description
-				p title
-				p length
-				img(src='' alt='favorite icon')
-			figure
-				img(src='' alt='video')
-				figcaption description
-				p title
-				p length
-				img(src='' alt='favorite icon')
-			figure
-				img(src='' alt='video')
-				figcaption description
-				p title
-				p length
-				img(src='' alt='favorite icon')
-			figure
-				img(src='' alt='video')
-				figcaption description
-				p title
-				p length
-				img(src='' alt='favorite icon')
-			figure
-				img(src='' alt='video')
-				figcaption description
-				p title
-				p length
-				img(src='' alt='favorite icon')
+			div.paginate
+				a(href="previous")
+					img(src='/images/arrow-previous.png' alt='previous page')
+				a(href='next')
+					img(src='/images/arrow-next.png' alt='next page')
+			each val, index in n
+				figure
+					img(src=val alt='video')
+					figcaption
+						p.title title
+						p.time 3:45
+						img.fav(src='/images/star-normal.png' alt='favorite icon')
+			div.paginate
+				a(href="previous")
+					img(src='/images/arrow-previous.png' alt='previous page')
+				a(href='next')
+					img(src='/images/arrow-next.png' alt='next page')
 			div.clear
-
+	div.spacer
 
 
 

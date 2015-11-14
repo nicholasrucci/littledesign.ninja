@@ -1,9 +1,41 @@
 footer
-    div.wrapper
-      ul
-        li
-          a(href="#") About Us
-        li
-          a(href="#") Site Map
-        li
-          a(href="#") Support
+	div.wrapper
+		ul
+			li
+				a(href="#") About Us
+			li
+				a(href="#") Site Map
+			li
+				a(href="#") Support
+#overlay
+	div
+		div.close(onclick='overlay()')
+			img(src='/images/button-exit.png')
+		div.first
+			h1 Sign up
+			h2 Why should I sign up?
+			ul
+				li Favorite Videos
+				li Rate Videos
+				li Easy Requesting
+				li Be a Ninja too!
+			a(href='#' onclick='overlay(); signup()') Sign Up
+		div.half
+			h1 Login
+			form
+				input(type='text' name='userlogin' placeholder='Username')
+				input(type='password' name='userpass' placeholder='Password')
+				input(type='submit' name='login' value='Login')
+		div.clear
+#signup
+	div
+		div.close(onclick='signup()')
+			img(src='/images/button-exit.png')
+		h2 Sign up
+		form
+			input(type='text' name='username' placeholder='username')
+			input(type='password' name='password' placeholder='password')
+			input(type='password' name='passver' placeholder='verify password')
+			input(type='email' name='email' placeholder='email')
+			input(type='submit' value='Submit' name='submit')
+		div.clear

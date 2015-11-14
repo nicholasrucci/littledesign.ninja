@@ -1,4 +1,4 @@
-extends ./header.jade
+extends includes/header
 
 block title
   title Little Design Ninja | Home
@@ -26,31 +26,16 @@ block content
   section.videos
     div.wrapper
       h2 Recently Added
-      div.video
-        img(src='/images/thumb.png' alt='thumbnail')
-        div
-          p title
-          p author | timestamp
-          p description
-      div.video
-        img(src='/images/thumb.png' alt='thumbnail')
-        div
-          p title
-          p author | timestamp
-          p description
-      div.video
-        img(src='/images/thumb.png' alt='thumbnail')
-        div
-          p title
-          p author | timestamp
-          p description
-      div.video
-        img(src='/images/thumb.png' alt='thumbnail')
-        div
-          p title
-          p author | timestamp
-          p description
+      if videos.length > 0
+        - for (var i = 0; i < 4; i++)
+          div.video
+            a(href="/videos/" + videos[i].id)
+              img(src='/images/thumb.png' alt='thumbnail')
+            div
+              p #{videos[i].title}
+              p #{videos[i].author} | #{videos[i].duration}
+              p #{videos[i].description}
       div.clear
   div.spacer
-  include ./foot.jade
+  include includes/foot
 

@@ -37,17 +37,9 @@
 	require('./app/routes/views/admin')(app);
 	require('./app/routes/views/videos')(app);
 	require('./app/routes/views/favorites')(app);
+	require('./app/routes/views/index')(app);
 
-	app.get('/', function (req, res) {
-		res.render('index', {
-			user: req.user,
-			videos: req.videos
-		});
-	});
 
-	app.get('*', function(req, res) {
-		res.redirect('/');
-	});
 
 	app.listen(process.env.PORT, function () {
 		console.log('Port', process.env.PORT);

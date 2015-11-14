@@ -1,4 +1,4 @@
-extends ./header.jade
+extends ../includes/header
 
 block title
   title Little Design Ninja | Profile
@@ -17,11 +17,11 @@ block content
               td= video.duration
               td= x
       div.new-vids
-        -var recentvids = ['the', 'four', 'newest', 'videos']
-        each vid in recentvids
-          img(src=vid)
-          p title
-          p description
+        if videos.length > 0
+          - for (var i = 0; i < 4; i++)
+            img(src="")
+            p #{videos[i].title}
+            p #{videos[i].description}
       div.clear
   div.spacer
-  include ./foot.jade
+  include ../includes/foot

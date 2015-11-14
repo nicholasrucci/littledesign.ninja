@@ -8,12 +8,11 @@
 		if (req.user) {
 			next();
 		}	else {
-			res.render('index');
+			res.redirect('/');
 		}
 	};
 
 	module.exports = function(app) {
-		app.get('/login', SessionsController.new);
 		app.post('/login', passport.authenticate('local'), SessionsController.create);
 		app.get('/profile', isAuthed, SessionsController.profile);
 		app.get('/logout', SessionsController.destroy);

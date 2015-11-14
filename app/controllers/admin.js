@@ -5,7 +5,7 @@
 
 	var AdminController = {
 		dashboard: function(req, res) {
-			res.render('dashboard');
+			res.render('admin/dashboard');
 		},
 
 		adminIndex: function(req, res) {
@@ -14,7 +14,7 @@
 				if (err) {
 					console.log(err);
 				} else {
-					res.render('videos/index', {
+					res.render('admin/index', {
 						videos: allVideos
 					});
 				}
@@ -22,13 +22,13 @@
 		},
 
 		new: function(req, res) {
-			res.render('videos/new');
+			res.render('admin/new');
 		},
 
 		create: function(req, res) {
 			req.file('video').upload({
 				dirname: __dirname + '../../../public/uploads',
-				maxBytes: 150000000
+				maxBytes: 1500000000
 			}, function(err, uploadedFiles){
 				if(err) {
 					return res.sendStatus(500, err);
@@ -50,7 +50,7 @@
 						if (err) {
 							console.log(err);
 						}
-						res.redirect('/');
+						res.redirect('/admin');
 					});
 
 				} else {
@@ -73,7 +73,7 @@
 
 		edit: function(req, res) {
 			Video.findOne({_id: req.params.id}, function(err, video) {
-				res.render('videos/edit', { video: video });
+				res.render('admin/edit', { video: video });
 			});
 		},
 

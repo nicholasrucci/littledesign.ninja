@@ -1,4 +1,4 @@
-extends ./header.jade
+extends ../includes/header
 
 block title
 	title Little Design Ninja | Tutorials
@@ -7,9 +7,9 @@ block content
 	section.main
 		div.wrapper
 			div.paginate
-				a(href="previous")
+				a(href="#")
 					img(src='/images/arrow-previous.png' alt='previous page')
-				a(href='next')
+				a(href='#')
 					img(src='/images/arrow-next.png' alt='next page')
 			each video in videos
 				figure
@@ -32,4 +32,4 @@ block content
 
 
 
-	include ./foot.jade
+	include ../includes/foot

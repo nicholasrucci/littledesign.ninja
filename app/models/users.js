@@ -8,7 +8,12 @@
 	var User = new mongoose.Schema({
 		username: String,
 		admin: {type: Boolean, default: false},
-		favorites: [{ id: String}]
+		favorites: [{
+			id: String,
+			title: String,
+			author: String,
+			duration: String
+		}]
 	});
 
 	User.plugin(passportLocalMongoose);

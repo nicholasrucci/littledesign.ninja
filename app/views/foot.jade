@@ -1,0 +1,60 @@
+footer
+	div.wrapper
+		ul
+			li
+				a(href="#") About Us
+			li
+				a(href="#") Site Map
+			li
+				a(href="#") Support
+#overlay
+	div
+		div.close(onclick='overlay()')
+			img(src='/images/button-exit.png')
+		div.first
+			h1 Sign up
+			h2 Why should I sign up?
+			ul
+				li Favorite Videos
+				li Rate Videos
+				li Easy Requesting
+				li Be a Ninja too!
+			a(href='#' onclick='overlay(); signup()') Sign Up
+		div.half
+			h1 Login
+			form(action="/login", method="post")
+				input(type='text' name='username' placeholder='Username')
+				input(type='password' name='password' placeholder='Password')
+				input(type='submit' name='login' value='Login')
+		div.clear
+#signup
+	div
+		div.close(onclick='signup()')
+			img(src='/images/button-exit.png')
+		h2 Sign up
+		form(action="/users", method="post")
+			input(type='text' name='username' placeholder='username')
+			input(type='password' name='password' placeholder='password')
+			input(type='password' name='passver' placeholder='verify password')
+			input(type='email' name='email' placeholder='email')
+			input(type='submit' value='Submit' name='submit')
+		div.clear
+#request
+	div
+		div.close(onclick='request()')
+			img(src='/images/button-exit.png')
+		h2 Request
+		form
+			label Illustrator
+			input(type='radio' name='tutorial' value='Illustrator') 
+			label Indesign
+			input(type='radio' name='tutorial' value='Indesign') 
+			label Photoshop
+			input(type='radio' name='tutorial' value='Photoshop') 
+			label HTML/CSS
+			input(type='radio' name='tutorial' value='HTML/CSS') 
+			label
+			br
+			textarea(placeholder="describe what you want to learn")
+			input(type='submit' name='submit' value="Send")
+		div.clear

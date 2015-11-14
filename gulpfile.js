@@ -20,12 +20,6 @@
     }
   });
 
-  gulp.task('jade', function() {
-    return gulp.src('app/views/*.jade')
-      .pipe(jade())
-      .pipe(gulp.dest('public/'));
-  });
-
 	gulp.task('lint', function () {
 		gulp.src(PATH.JS)
 			.pipe(jshint())
@@ -37,7 +31,7 @@
 			script: 'server.js',
 			ext: 'jade js',
 			ignore: [],
-			tasks: ['lint', 'jade']
+			tasks: ['lint']
 		})
 			.on('restart', function () {
 				console.log('Server restarted!');

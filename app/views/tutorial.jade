@@ -1,0 +1,38 @@
+extends ./header.jade
+
+block title
+  title Little Design Ninja | Tutorial
+block content
+  section.tutorial
+    div.wrapper
+      video(controls)
+        source(src='../#{video.video}' type="video/mp4")
+  div.spacer
+  section.tutorialinfo
+    div.wrapper
+      div.top
+        h3 #{video.title}
+        p #{video.duration}
+      div.third
+        p #{video.description}
+      if (user)
+        each favorite in user.favorites
+          if favorite.id === video.id
+            - break
+          else
+            div.favorites
+              form(method="post", action="/favorite/add")
+                input(type="text", name="video_id" value="#{video.id}" hidden)
+                input(type="text", name="video_title" value="#{video.title}" hidden)
+                input(type="text", name="video_author" value="#{video.author}" hidden)
+                input(type="text", name="video_duration" value="#{video.duration}" hidden)
+                input(type="submit", value="Add to favorites")
+              - break
+      div.clear
+  div.spacer
+    div.wrapper
+      a(href="/tutorials")
+        img(src='/images/back-arrow.png')
+        span Back to Videos
+
+  include ./foot.jade

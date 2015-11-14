@@ -1,0 +1,27 @@
+extends ./header.jade
+
+block title
+  title Little Design Ninja | Profile
+block content
+  div.spacer
+  section.favorite-table
+    div.wrapper
+      h2 Favorites
+      table
+        if user
+          each video in user.favorites
+            tr
+              td
+                a(href="/videos/#{video.id}") #{video.title}
+              td= video.author
+              td= video.duration
+              td= x
+      div.new-vids
+        -var recentvids = ['the', 'four', 'newest', 'videos']
+        each vid in recentvids
+          img(src=vid)
+          p title
+          p description
+      div.clear
+  div.spacer
+  include ./foot.jade

@@ -7,12 +7,13 @@
 		},
 
 		create: function(req, res) {
-			res.redirect('/');
+			res.redirect('/profile');
 		},
 
 		profile: function(req, res) {
 			res.render('profile', {
-				user: req.user
+				user: req.user,
+				videos: req.videos
 			});
 		},
 

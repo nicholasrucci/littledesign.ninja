@@ -3,14 +3,17 @@
 
   var VideoController = require('../../controllers/videos.js');
 
+	var isAdmin = function(req, res, next) {
+		if (req.user) {
+			if (req.user.admin) next();
+			else { res.redirect('/'); }
+		}
+		else { res.redirect('/'); }
+	};
+
   module.exports = function(app) {
-    app.get('/videos', VideoController.index);
-    app.get('/videos/new', VideoController.new);
-    app.post('/videos/create', VideoController.create);
-    app.get('/videos/(:id)/edit', VideoController.edit);
+    app.get('/tutorials', VideoController.index);
     app.get('/videos/(:id)/', VideoController.show);
-    app.put('/videos/(:id)', VideoController.update);
-    app.delete('/videos/(:id)', VideoController.delete);
   };
 
 }());

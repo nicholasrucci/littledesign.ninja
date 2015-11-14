@@ -18,6 +18,7 @@
 	/* Jade Setup */
 	app.set('views', path.join(__dirname, 'app/views'));
 	app.set('view engine', 'jade');
+	app.use(express.static('public'));
 
 	mongoose.connect('mongodb://localhost/ninja');
 
@@ -38,7 +39,14 @@
 	require('./app/routes/views/favorites')(app);
 
 	app.get('/', function (req, res) {
-		res.render('index', { user: req.user });
+		res.render('index', {
+			user: req.user,
+			videos: req.videos
+		});
+	});
+
+	app.get('*', function(req, res) {
+		res.redirect('/');
 	});
 
 	app.listen(process.env.PORT, function () {

@@ -13,5 +13,11 @@
 
 	module.exports = function(app) {
 		app.get('/admin', isAdmin, AdminController.dashboard);
+		app.get('/admin/videos', isAdmin, AdminController.adminIndex);
+		app.get('/admin/videos/new', isAdmin, AdminController.new);
+		app.post('/admin/videos/create', isAdmin, AdminController.create);
+		app.get('/admin/videos/(:id)/edit', isAdmin, AdminController.edit);
+		app.put('/videos/(:id)', isAdmin, AdminController.update);
+		app.delete('/videos/(:id)', isAdmin, AdminController.delete);
 	};
 })();

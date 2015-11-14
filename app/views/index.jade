@@ -1,11 +1,56 @@
-doctype html
-html
-  head
-    meta(charset="utf-8")
-    title LDN
-  body
-    if user
-      h1=user.admin
-    else
-      h1 no user
+extends ./header.jade
+
+block title
+  title Little Design Ninja | Home
+block content
+  div.spacer
+  section.ninjas
+    div.wrapper
+      figure
+        a(href='/tutorials')
+          img(src='/images/ninja-ai.png')
+          figcaption Illustrator
+      figure
+        a(href='/tutorials')
+          img(src='/images/ninja-id.png')
+          figcaption Indesign
+      figure
+        a(href='/tutorials')
+          img(src='/images/ninja-ps.png')
+          figcaption Photoshop
+      figure
+        a(href='/tutorials')
+          img(src='/images/ninja-wb.png')
+          figcaption HTML/CSS
+  div.spacer
+  section.videos
+    div.wrapper
+      h2 Recently Added
+      div.video
+        img(src='/images/thumb.png' alt='thumbnail')
+        div
+          p title
+          p author | timestamp
+          p description
+      div.video
+        img(src='/images/thumb.png' alt='thumbnail')
+        div
+          p title
+          p author | timestamp
+          p description
+      div.video
+        img(src='/images/thumb.png' alt='thumbnail')
+        div
+          p title
+          p author | timestamp
+          p description
+      div.video
+        img(src='/images/thumb.png' alt='thumbnail')
+        div
+          p title
+          p author | timestamp
+          p description
+      div.clear
+  div.spacer
+  include ./foot.jade
 

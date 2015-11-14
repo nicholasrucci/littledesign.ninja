@@ -1,0 +1,20 @@
+h1= video.title
+
+video(controls)
+  source(src="../#{video.video}", type="video/mp4")
+p= video.description
+p= video.author
+p= video.duration
+
+if (user)
+  each favorite in user.favorites
+    if favorite.id === video.id
+     - break
+    else
+      form(method="post", action="/favorite/add")
+        input(type="text", name="video_id" value="#{video.id}" hidden)
+        input(type="text", name="video_title" value="#{video.title}" hidden)
+        input(type="text", name="video_author" value="#{video.author}" hidden)
+        input(type="text", name="video_duration" value="#{video.duration}" hidden)
+        input(type="submit", value="Add as favorite")
+      - break

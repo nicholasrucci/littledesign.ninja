@@ -6,25 +6,19 @@
 	var nodemon 				= require('gulp-nodemon');
 	var jshint 					= require('gulp-jshint');
 	var env 						= require('gulp-env');
-	var jade          = require('gulp-jade');
+	var jade          	= require('gulp-jade');
 	var plugins 				= gulpLoadPlugins();
 
-gulp.task('jade', function() {
-  return gulp.src('app/views/*.jade')
-    .pipe(jade())
-    .pipe(gulp.dest('public/'));
-});
-
 	var PATH = {
-		JS: ['./app/**/*.js', './public/**/*.js', './*.js']
+		JS: ['./app/**/*.js', './public/**/*.js', './*.js'],
+		HTML: './public/html'
 	};
 
-
-	env({
-		vars: {
-			PORT: 3002
-		}
-	});
+  env({
+    vars: {
+      PORT: 3000
+    }
+  });
 
 	gulp.task('lint', function () {
 		gulp.src(PATH.JS)
@@ -37,7 +31,7 @@ gulp.task('jade', function() {
 			script: 'server.js',
 			ext: 'jade js',
 			ignore: [],
-			tasks: ['lint', 'jade']
+			tasks: ['lint']
 		})
 			.on('restart', function () {
 				console.log('Server restarted!');

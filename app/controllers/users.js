@@ -4,17 +4,13 @@
 	var User = require('../models/users');
 
 	var UsersController = {
-		new: function(req, res) {
-			res.render('signUp', {});
-		},
-
 		create: function(req, res) {
 			var user = new User({
 				username: req.body.username
 			});
 			User.register(user, req.body.password, function(err) {
 				if (err) {
-					res.render('signUp', { message: err.message });
+					res.render('index', { message: err.message });
 				}
 				else {
 					res.redirect('/');

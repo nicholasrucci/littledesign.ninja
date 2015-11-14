@@ -11,7 +11,6 @@
 	};
 
 	module.exports = function(app) {
-		app.get('/users/new', isAuthed, UsersController.new);
-		app.post('/users', UsersController.create);
+		app.post('/', UsersController.create);
 	};
 })();

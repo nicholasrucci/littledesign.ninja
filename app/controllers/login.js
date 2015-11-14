@@ -1,19 +1,24 @@
 (function(){
 	'use strict';
 
+	var Video = require('../models/videos');
+
 	var SessionsController = {
-		new: function(req, res) {
-			res.render('login');
-		},
 
 		create: function(req, res) {
 			res.redirect('/profile');
 		},
 
 		profile: function(req, res) {
-			res.render('profile', {
-				user: req.user,
-				videos: req.videos
+			var dbQuery = {};
+			Video.find(dbQuery, function (err, videos) {
+				if (err) console.log(err);
+				else {
+					res.render('users/profile', {
+						user: req.user,
+						videos: videos
+					});
+				}
 			});
 		},
 

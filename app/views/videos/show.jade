@@ -5,3 +5,7 @@ video(controls)
 p= video.description
 p= video.author
 p= video.duration
+
+form(method="post", action="/favorite/add")
+  input(type="text", name="video_id" value="#{video.id}" hidden)
+  input(type="submit", value="Add as favorite")

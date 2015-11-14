@@ -12,6 +12,7 @@
 	var cookieParser			= require('cookie-parser');
 	var config            = require('./app/config/config.js');
 	var methodOverride   	= require('method-override');
+	var paginate					= require('paginate');
 	var app								= express();
 
 	/* Jade Setup */
@@ -27,6 +28,7 @@
 	app.use(passport.session());
 	app.use(flash());
 	app.use(methodOverride('_method'));
+	app.use('/uploads', express.static('public/uploads'));
 
 	require('./app/config/passport')(passport);
 	require('./app/routes/views/users')(app);

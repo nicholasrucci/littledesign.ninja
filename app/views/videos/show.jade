@@ -1,4 +1,7 @@
-h1=video.title
-p=video.description
-p=video.author
-p=video.duration
+h1= video.title
+
+video(controls)
+  source(src="../#{video.video}", type="video/mp4")
+p= video.description
+p= video.author
+p= video.duration

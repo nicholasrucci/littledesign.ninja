@@ -39,3 +39,20 @@ footer
 			input(type='email' name='email' placeholder='email')
 			input(type='submit' value='Submit' name='submit')
 		div.clear
+#request
+	div
+		div.close(onclick='request()')
+			img(src='/images/button-exit.png')
+		h2 Request
+		form
+			label Illustrator
+			input(type='radio' name='tutorial' value='Illustrator') 
+			label Indesign
+			input(type='radio' name='tutorial' value='Indesign') 
+			label Photoshop
+			input(type='radio' name='tutorial' value='Photoshop') 
+			label HTML/CSS
+			input(type='radio' name='tutorial' value='HTML/CSS') 
+			label Request
+			textarea(placeholder="describe what you want to learn")
+		div.clear

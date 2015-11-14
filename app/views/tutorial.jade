@@ -1,0 +1,27 @@
+extends ./header.jade
+
+block title
+	title Little Design Ninja | Tutorial
+block content
+	section.tutorial
+		div.wrapper
+			video(controls)
+				source(src='/images/ninja.mp4' type="video/mp4")
+	div.spacer
+	section.tutorialinfo
+		div.wrapper
+			div.top
+				h3 Title
+				p time
+			div.third
+				p description
+			div.favorites
+				a(href="#") Add to Favorites
+			div.clear
+	div.spacer
+		div.wrapper
+			a(href="/tutorials.html")
+				img(src='/images/back-arrow.png')
+				span Back to Videos
+
+	include ./foot.jade

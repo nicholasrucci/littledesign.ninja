@@ -22,7 +22,7 @@ gulp.task('jade', function() {
 
 	env({
 		vars: {
-			PORT: 3000
+			PORT: 3002
 		}
 	});
 

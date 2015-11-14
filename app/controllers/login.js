@@ -10,6 +10,12 @@
 			res.redirect('/');
 		},
 
+		profile: function(req, res) {
+			res.render('profile', {
+				user: req.user
+			});
+		},
+
 		destroy: function(req, res) {
 			req.logout();
 			res.redirect('/');

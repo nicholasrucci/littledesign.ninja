@@ -35,6 +35,7 @@
 	require('./app/routes/views/login')(app);
 	require('./app/routes/views/admin')(app);
 	require('./app/routes/views/videos')(app);
+	require('./app/routes/views/favorites')(app);
 
 	app.get('/', function (req, res) {
 		res.render('index', { user: req.user });
